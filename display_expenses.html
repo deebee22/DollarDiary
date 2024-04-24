@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="static/css/expense_styles.css">
+{% endblock %}
+
+{% block content %}
+
+<h2>Expenses</h2>
+      <div class="exptbl">
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Amount</th>
+              <th>Description</th>
+              <th>Category</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for expense in expenses %}
+            <tr>
+              <td>{{ expense.amount }}</td>
+              <td>{{ expense.description }}</td>
+              <td>{{ expense.category }}</td>
+              <td>{{ expense.date }}</td>
+              <td>
+                <form action="{{ url_for('update_expense', id=expense.id) }}" method="get" class="action">
+                  <button type="submit" class="updbtn">Update</button>
+                </form>
+                <form action="{{ url_for('confirm_delete', id=expense.id) }}" method="get" class="action">
+                  <button type="submit" class="delbtn">Delete</button>
+                </form>
+              </td>
+
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+{% endblock %}

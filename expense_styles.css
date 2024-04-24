@@ -1,0 +1,115 @@
+h2, h5 {
+    text-align: center;
+    color: black;
+    padding-top: 30px;
+}
+
+.center {
+    text-align: center;
+    padding: 60px;
+    width: 40%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #6c757d;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.subbtn {
+    padding-bottom: 20px;
+    background-color:  #6c757d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.subbtn:hover {
+    background-color: #495057;
+}
+
+.centerbtn {
+    text-align: center;
+}
+
+.exptbl {
+    width: 70%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+input[type="text"], select, input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+}
+
+table {
+    width: 70%;
+    margin: 50px auto;
+    border-collapse: collapse;
+    background-color: #6c757d;
+    color: #fff;
+}
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+    text-align: left; 
+} 
+th {
+    background-color: #495057;
+}
+.action {
+    text-align: center;
+}
+.updbtn, .delbtn {
+    background-color: #c4eaf3;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    margin-right: 5px;
+    text-decoration: none;
+}
+.update-btn:hover, .delete-btn:hover {
+    background-color: #0056b3;
+}
+

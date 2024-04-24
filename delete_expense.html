@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<style>
+    h2, p {
+    text-align: center;
+    color: black;
+    padding-top: 10px;
+}
+
+    div {
+    text-align: center;
+    padding-bottom: 10px;
+    
+}
+    
+
+</style>
+{% endblock %}
+
+{% block title %}
+Delete Expense
+{% endblock %}
+
+{% block content %}
+
+<body>
+    <h2>Are you sure you want to delete this expense?</h2>
+    <p><strong>Amount:</strong> {{ expense.amount }}</p>
+    <p><strong>Description:</strong> {{ expense.description }}</p>
+    <p><strong>Category:</strong> {{ expense.category }}</p>
+    <p><strong>Date:</strong> {{ expense.date }}</p>
+    <div>
+        <form action="{{ url_for('delete_expense', id=expense.id) }}" method="POST">
+            <input type="submit" value="Confirm Delete">
+        </form>
+    </div>
+    <div>
+        <a href="{{ url_for('expenses') }}">Cancel</a>
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="static/css/expense_styles.css">
+{% endblock %}
+
+{% block title %}
+Expenses
+{% endblock %}
+
+{% block content %}
+<h2>Log Your Expenses Below</h2> 
+
+</br>
+
+<body>
+    <form method="post">
+        {{ form.csrf_token }}
+        <div class="center">
+          <label id="amt" for="amount">Amount:</label>
+          <input type="number" id="amount" name="amount" step="0.01" required>
+          <label for="description">Description:</label>
+          <input type="text" id="description" name="description" required>
+          <label for="category">Category:</label>
+          <select id="category" name="category" required>
+            <option value="shopping">Shopping</option>
+            <option value="home">Home</option>
+            <option value="school">School</option>
+            <option value="pet">Pet</option>
+            <option value="groceries">Groceries</option>
+            <option value="dining_out">Dining Out</option>
+            <option value="health_and_wellness">Health and Wellness</option>
+            <option value="transportation">Transportation</option>
+            <option value="misc">Miscellaneous</option>
+          </select>
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="centerbtn">
+          <button type="submit" class="subbtn">Add Expense</button>
+        </div>
+      </form>
+{% endblock %}

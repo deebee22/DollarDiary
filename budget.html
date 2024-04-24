@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<style>
+    h2, p {
+    text-align: center;
+    color: black;
+    padding-top: 10px;
+}
+
+    div {
+    text-align: center;
+    padding-bottom: 10px;
+    
+}
+    
+</style>
+{% endblock %}
+
+{% block title %}
+Your Budget
+{% endblock %}
+
+{% block content %}
+<body>
+    <h2>Set Your Budget</h2>
+    <div>
+        <form method="POST" action="{{ url_for('budget') }}">
+            <label for="amount">Amount:</label>
+            <input type="number" name="amount" id="amount" step="0.01" required><br><br>
+            
+            <label for="length">Length:</label>
+            <select name="length" id="length" required>
+                <option value="day">Day</option>
+                <option value="week">Week</option>
+                <option value="month">Month</option>
+            </select><br><br>
+            
+            <label for="date">Enter today's date:</label>
+            <input type="date" id="date" name="date" required><br><br>
+
+            <button type="submit">Ready, Set, Budget!</button>
+        </form>
+    </div>
+</body>
+{% endblock %}

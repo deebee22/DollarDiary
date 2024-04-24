@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<style>
+     body {
+            font-family: 'Arial', sans-serif;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            background-color: #6c757d; 
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 50px;
+            width: 50%;
+        }
+        h1, p {
+            margin: 0;
+            padding: 0;
+            color: #fff; 
+        }
+        .logbtn {
+            background-color: #ffffff;
+            color: rgb(87, 87, 87);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .logbtn:hover {
+            background-color: #bebebe; 
+            color: rgb(87, 87, 87);
+        }
+     </style>       
+{% endblock %}
+
+{% block title %}
+Dollar Diary Home
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Dollar Diary</h1>
+    <p>Click the link below to begin</p>
+    <a class="logbtn" href="{{ url_for('expenses') }}">Log an Expense</a>
+    <br>
+    <br>
+    <p>*For the best experience with dollar diary, we recommend treating this app like an <em>actual</em> diary. Visit the <strong>Budgets</strong> tab to set your spending budget. Log your expenses as you splurge so you never forget!*</p>
+</div>
+
+{% endblock %}
+

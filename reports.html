@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<style>
+    h2, p {
+    text-align: center;
+    color: black;
+    padding-top: 10px;
+}
+
+</style>
+{% endblock %}
+
+{% block title %}
+Your Spending Reports
+{% endblock %}
+
+{% block content %}
+<body>
+        <h2>Your Budget</h2>
+        {% if user_budget %}
+            <p>Your current budget is ${{ user_budget.amount }} for the {{ user_budget.time }}. You set this budget on {{ clean }}. You will need to set a new one after {{ clean2 }}, which is the end date for your budget. </p>
+        {% endif %}
+            {% if total is defined %}
+                {% if status == 'within' %}
+                    <p>You are currently within budget with ${{ left }} left to spend for the {{ user_budget.time }}.</p>
+                {% elif status == 'exceed' %}
+                    <p>You are currently over your budget by ${{ over }}.</p>
+            {% endif %}
+        {% endif %}
+            {% if max_spending %}
+                <p>You spent the most money in the category {{ max_spending }} for the {{ user_budget.time }} with a total of ${{ max_amount }}.</p>
+            
+        {% endif %}
+</body>
+{% endblock %}
